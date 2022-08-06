@@ -44,10 +44,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
-    <header class="header">
+    <header class="header section">
       <div class="container">
         <div class="logo">
           <svg class="logo__icon" width="199" height="50">
@@ -56,17 +56,34 @@
         </div>
         <nav class="nav">
           <ul class="nav__list">
-            <li class="nav__item"><a href="./index.html">Home</a></li>
-            <li class="nav__item"><a href="#about">About us</a></li>
-            <li class="nav__item"><a href="#how">How it&#39;s made&#63;</a></li>
-            <li class="nav__item"><a href="#products">Our products</a></li>
-            <li class="nav__item"><a href="#contacts">Contact</a></li>
+            <li class="nav__item">
+              <a class="nav__link nav__link--current" href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#about">About us</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#how">How it&#39;s made&#63;</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#products">Our products</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#contacts">Contact</a>
+            </li>
           </ul>
         </nav>
-        <div class="mobile-menu">
+        <div class="mobile-menu" data-menu-button>
           <span class="mobile-menu__particle"></span>
         </div>
-        <button class="btn" type="button">Buy now</button>
+        <button class="btn" type="button">
+          Buy now
+          <svg class="btn__icon" width="6" height="10">
+            <use href="./media/images/symbol-defs.svg#Vector-1"></use>
+          </svg>
+        </button>
         <div class="hero">
           <h1 class="hero__header">
             ice cream made with <span class="hero__header--red">passion</span>
@@ -77,35 +94,87 @@
           >
           <div class="hero__content">
             <img
+              class="hero__img"
+              srcset="
+                ./media/images/tablet-header/slider-pic5-152.png  152w,
+                ./media/images/desktop-header/slider-pic5-213.png 213w,
+                ./media/images/tablet-header/slider-pic5-304.png  304w,
+                ./media/images/desktop-header/slider-pic5-426.png 426w
+              "
+              sizes="(min-width: 1200px) 213px, (min-width: 768px) 152px"
               src="./media/images/desktop-header/slider-pic5-213.png"
-              alt=""
+              alt="luxury milk"
             />
             <div class="hero__thumb">
               <p class="hero__text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et
               </p>
-              <button class="hero__btn" type="button">&#10140;</button>
+              <button class="hero__btn" type="button">
+                <span class="hero__arrow">&#10140;</span>
+              </button>
             </div>
           </div>
-          <img
-            src="./media/images/desktop-header/Ellipse3-534.png"
-            alt="red circle"
-          />
-          <img
-            src="./media/images/desktop-header/slider-pic7-236.png"
-            alt="IceCream"
-          />
+          <div class="hero__circle">
+            <img
+              srcset="
+                ./media/images/mobile-header/Ellipse3-284.png    284w,
+                ./media/images/tablet-header/Ellipse3-335.png    335w,
+                ./media/images/desktop-header/Ellipse3-534.png   534w,
+                ./media/images/mobile-header/Ellipse3-568.png    568w,
+                ./media/images/tablet-header/Ellipse3-670.png    670w,
+                ./media/images/desktop-header/Ellipse3-1068.png 1068w
+              "
+              sizes="(min-width: 1200px) 534px, (min-width: 768px) 335px, (max-width: 767px) 100%"
+              src="./media/images/desktop-header/Ellipse3-534.png"
+              alt="red circle"
+            />
+          </div>
+          <div class="hero__icecream">
+            <img
+              srcset="
+                ./media/images/tablet-header/slider-pic7-143.png  143w,
+                ./media/images/mobile-header/slider-pic7-171.png  171w,
+                ./media/images/desktop-header/slider-pic7-236.png 236w,
+                ./media/images/tablet-header/slider-pic7-286.png  286w,
+                ./media/images/mobile-header/slider-pic7-342.png  342w,
+                ./media/images/desktop-header/slider-pic7-472.png 472w
+              "
+              sizes="(min-width: 1200px) 236px, (min-width: 768px) 143px, (max-width: 767px) 100%"
+              src="./media/images/desktop-header/slider-pic7-236.png"
+              alt="IceCream"
+            />
+          </div>
           <div class="hero__institution">
             <p class="hero__inst-number">16</p>
             <p class="hero__inst-type">cafes</p>
+            <svg class="hero__icon">
+              <use href="./media/images/symbol-defs.svg#Ellipse1"></use>
+            </svg>
           </div>
           <div class="hero__institution">
             <p class="hero__inst-number">23</p>
             <p class="hero__inst-type">food trucks</p>
+            <svg class="hero__icon">
+              <use href="./media/images/symbol-defs.svg#Ellipse1"></use>
+            </svg>
+          </div>
+          <div class="hero__girl">
+            <img
+              srcset="
+                ./media/images/tablet-header/slider-pic4-190.png  190w,
+                ./media/images/desktop-header/slider-pic4-304.png 304w,
+                ./media/images/tablet-header/slider-pic4-380.png  380w,
+                ./media/images/desktop-header/slider-pic4-608.png 608w
+              "
+              sizes="(min-width: 1200px) 304px, (min-width: 768px) 190px"
+              src="./media/images/desktop-header/slider-pic4-304.png"
+              alt=""
+            />
           </div>
         </div>
       </div>
     </header>
+    <script src="./menu.js"></script>
   </body>
 </html>
