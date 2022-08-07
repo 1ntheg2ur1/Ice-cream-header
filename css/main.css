@@ -71,11 +71,24 @@ body {
   }
 }
 
-.section {
-  padding-bottom: 60px;
+@media screen and (max-width: 767px) {
+  .section {
+    padding-bottom: 158px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .section {
+    padding-bottom: 56px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section {
+    padding-bottom: 84px;
+  }
 }
 
 .header {
+  position: relative;
   background-color: #ffb8ca;
   margin: 0 auto;
   max-width: 320px;
@@ -119,10 +132,6 @@ body {
   .header {
     background-image: url(../media/images/desktop-header/Ellipse3-1068.png);
   }
-}
-
-.header__container {
-  position: relative;
 }
 
 .logo {
@@ -257,10 +266,13 @@ body {
 .mobile-menu::after {
   bottom: 0;
 }
+.mobile-menu.is-open {
+  margin-right: 0;
+}
 @media screen and (min-width: 768px) {
   .mobile-menu.is-open {
     position: absolute;
-    right: 20px;
+    right: 32px;
     top: 27px;
   }
 }
@@ -283,6 +295,11 @@ body {
 
 @media screen and (min-width: 1200px) {
   .menu-container {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menu-container.is-open {
     display: none;
   }
 }
@@ -432,9 +449,6 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -570,35 +584,39 @@ body {
 }
 
 .hero__girl,
-.hero__img,
-.hero__thumb,
 .hero__institution {
   display: none;
 }
 @media screen and (min-width: 768px) {
   .hero__girl,
-.hero__img,
-.hero__thumb,
 .hero__institution {
     display: block;
   }
 }
 
 .hero__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .hero__content {
+    display: block;
+  }
+}
+
+.hero__img {
+  position: absolute;
 }
 
 .hero__thumb {
   width: 114px;
+  margin-top: 61px;
+  margin-left: 152px;
 }
 @media screen and (min-width: 1200px) {
   .hero__thumb {
     width: 200px;
+    margin-top: 108px;
+    margin-left: 213px;
   }
 }
 
@@ -736,4 +754,11 @@ body {
     font-size: 14px;
     line-height: 1.2857;
   }
+}
+
+.hero__icecream {
+  position: absolute;
+}
+.hero__girl {
+  position: absolute;
 }/*# sourceMappingURL=main.css.map */

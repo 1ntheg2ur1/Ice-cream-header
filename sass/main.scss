@@ -71,10 +71,21 @@ body {
 }
 
 .section {
-  padding-bottom: 60px;
+  @media screen and (max-width: 767px) {
+    padding-bottom: 158px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 56px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-bottom: 84px;
+  }
 }
 
 .header {
+  position: relative;
   background-color: #ffb8ca;
   margin: 0 auto;
   max-width: 320px;
@@ -120,9 +131,9 @@ body {
   }
 }
 
-.header__container {
-  position: relative;
-}
+// .header__container {
+//   position: relative;
+// }
 
 .logo {
   display: block;
@@ -251,9 +262,11 @@ body {
   }
 
   &.is-open {
+    margin-right: 0;
+
     @media screen and (min-width: 768px) {
       position: absolute;
-      right: 20px;
+      right: 32px;
       top: 27px;
     }
 
@@ -278,6 +291,12 @@ body {
 .menu-container {
   @media screen and (min-width: 1200px) {
     display: none;
+  }
+
+  &.is-open {
+    @media screen and (min-width: 1200px) {
+      display: none;
+    }
   }
 }
 
@@ -406,9 +425,13 @@ body {
 .hero__box {
   @media screen and (min-width: 768px) {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    // margin-bottom: 20px;
   }
+
+  // @media screen and (min-width: 1200px) {
+  //   margin-bottom: 40px;
+  // }
 }
 
 .hero__wrapper {
@@ -529,8 +552,6 @@ body {
 }
 
 .hero__girl,
-.hero__img,
-.hero__thumb,
 .hero__institution {
   display: none;
 
@@ -540,15 +561,26 @@ body {
 }
 
 .hero__content {
-  display: flex;
-  align-items: center;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+
+.hero__img {
+  position: absolute;
 }
 
 .hero__thumb {
   width: 114px;
+  margin-top: 61px;
+  margin-left: 152px;
 
   @media screen and (min-width: 1200px) {
     width: 200px;
+    margin-top: 108px;
+    margin-left: 213px;
   }
 }
 
@@ -622,7 +654,7 @@ body {
 .hero__arrow-icon {
   color: currentColor;
 }
- 
+
 .hero__institution {
   position: relative;
   right: 16px;
@@ -681,5 +713,22 @@ body {
   @media screen and (min-width: 1200px) {
     font-size: 14px;
     line-height: 1.2857;
+  }
+}
+
+.hero__icecream {
+  position: absolute;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1200px) {
+  }
+}
+
+.hero__girl {
+  position: absolute;
+
+  @media screen and (min-width: 1200px) {
   }
 }
