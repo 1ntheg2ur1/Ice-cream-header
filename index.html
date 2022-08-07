@@ -49,46 +49,13 @@
   <body data-open>
     <header class="header section">
       <div class="container header__container">
-        <a class="logo" href="./index.html"
-          ><svg class="logo__icon" width="199" height="50">
-            <use href="./media/images/symbol-defs.svg#Group"></use></svg
-        ></a>
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a class="nav__link nav__link--current" href="./index.html"
-                >Home</a
-              >
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#about">About us</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#how">How it&#39;s made&#63;</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#products">Our products</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#contacts">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <button class="btn" type="button">
-          Buy now
-          <svg class="btn__icon" width="6" height="10">
-            <use href="./media/images/symbol-defs.svg#Vector-1"></use>
-          </svg>
-        </button>
-        <div class="menu-container" id="menu-container" data-menu>
-          <button class="btn-menu" type="button">
-            Buy now
-            <svg class="btn__icon" width="6" height="10">
-              <use href="./media/images/symbol-defs.svg#Vector-1"></use>
-            </svg>
-          </button>
-          <nav class="menu-container__nav">
-            <ul class="menu-container__list">
+        <div class="header__box">
+          <a class="logo" href="./index.html"
+            ><svg class="logo__icon" width="199" height="50">
+              <use href="./media/images/symbol-defs.svg#Group"></use></svg
+          ></a>
+          <nav class="nav">
+            <ul class="nav__list">
               <li class="nav__item">
                 <a class="nav__link nav__link--current" href="./index.html"
                   >Home</a
@@ -108,17 +75,52 @@
               </li>
             </ul>
           </nav>
-        </div>
-        <div
-          class="mobile-menu"
-          aria-expanded="false"
-          aria-controls="menu-container"
-          data-menu-button
-        >
-          <span
-            class="mobile-menu__particle"
-            aria-label="Переключатель мобильного меню"
-          ></span>
+          <div class="menu-container" id="menu-container" data-menu>
+            <button class="btn-menu" type="button">
+              Buy now
+              <svg class="btn__icon" width="6" height="10">
+                <use href="./media/images/symbol-defs.svg#Vector-1"></use>
+              </svg>
+            </button>
+            <nav class="menu-container__nav">
+              <ul class="menu-container__list">
+                <li class="nav__item">
+                  <a class="nav__link nav__link--current" href="./index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link" href="#about">About us</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link" href="#how">How it&#39;s made&#63;</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link" href="#products">Our products</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link" href="#contacts">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div
+            class="mobile-menu"
+            aria-expanded="false"
+            aria-controls="menu-container"
+            data-menu-button
+          >
+            <span
+              class="mobile-menu__particle"
+              aria-label="Переключатель мобильного меню"
+            ></span>
+          </div>
+          <button class="btn" type="button">
+            Buy now
+            <svg class="btn__icon" width="6" height="10">
+              <use href="./media/images/symbol-defs.svg#Vector-1"></use>
+            </svg>
+          </button>
         </div>
         <div class="hero">
           <h1 class="hero__header">
