@@ -71,30 +71,55 @@ body {
 .header {
   background-color: #ffb8ca;
   margin: 0 auto;
+  max-width: 320px;
+  background-size: 346px 344px;
+  background-repeat: no-repeat;
+  overflow: hidden;
 
-  @media screen and (min-width: 320px) {
-    max-width: 320px;
+  @media screen and (max-width: 767px) {
+    background-image: url(../media/images/mobile-header/Ellipse3-284.png);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../media/images/mobile-header/Ellipse3-568.png);
+    }
   }
 
   @media screen and (min-width: 768px) {
     max-width: 768px;
+    background-size: 335px 333px;
+    background-image: url(../media/images/tablet-header/Ellipse3-335.png);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../media/images/tablet-header/Ellipse3-670.png);
+    }
   }
 
   @media screen and (min-width: 1200px) {
     max-width: 1200px;
+    background-size: 534px 534px;
+    background-image: url(../media/images/desktop-header/Ellipse3-534.png);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../media/images/desktop-header/Ellipse3-1068.png);
+    }
   }
 }
 
 @media screen and (max-width: 1199px) {
   .nav {
-        overflow: hidden;
+    overflow: hidden;
   }
 
   .nav__list {
     position: absolute;
     transform: translateX(100%);
     background-color: #e17992;
-
 
     width: 100vw;
     height: 100vh;
@@ -204,7 +229,8 @@ body {
 
   transition: background-color 500ms ease-out;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: #ecebeb;
   }
 
@@ -285,7 +311,8 @@ body {
 
   transition: background-color 500ms ease-out;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: #ecebeb;
     color: var(--accent-color);
   }
@@ -345,19 +372,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 18px;
   height: 18px;
+
   border-radius: 50%;
 
   border-color: transparent;
   color: var(--accent-color);
+  fill: var(--accent-color);
   background-color: var(--main-text-color);
   cursor: pointer;
 
   transition: background-color 500ms ease-out;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: #ecebeb;
   }
 
@@ -368,25 +397,55 @@ body {
 }
 
 .hero__arrow {
-  font-size: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  @media screen and (min-width: 1200px) {
-    font-size: 10px;
+@media screen and (max-width: 1199px) {
+  .hero__arrow-icon--big {
+    display: none;
+  }
+
+  .hero__arrow-icon--small {
+    display: block;
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .hero__arrow-icon--big {
+    display: block;
+  }
+
+  .hero__arrow-icon--small {
+    display: none;
+  }
+}
+
+.hero__arrow-icon {
+  color: currentColor;
+}
+
 .hero__institution {
+  position: relative;
+  right: 16px;
+  z-index: 10;
   text-align: right;
 }
 
 .hero__icon {
   position: absolute;
+  top: -2px;
+  right: -10px;
+  z-index: -1;
 
-  transform: translate(25%, 37.5%);
   width: 16px;
   height: 16px;
 
   @media screen and (min-width: 1200px) {
+    top: -4px;
+    right: -18px;
+
     width: 30px;
     height: 30px;
   }

@@ -73,20 +73,43 @@ body {
 .header {
   background-color: #ffb8ca;
   margin: 0 auto;
+  max-width: 320px;
+  background-size: 346px 344px;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 767px) {
   .header {
-    max-width: 320px;
+    background-image: url(../media/images/mobile-header/Ellipse3-284.png);
+  }
+}
+@media screen and (max-width: 767px) and (min-device-pixel-ratio: 2), screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 767px) and (min-resolution: 192dpi), screen and (max-width: 767px) and (min-resolution: 2dppx) {
+  .header {
+    background-image: url(../media/images/mobile-header/Ellipse3-568.png);
   }
 }
 @media screen and (min-width: 768px) {
   .header {
     max-width: 768px;
+    background-size: 335px 333px;
+    background-image: url(../media/images/tablet-header/Ellipse3-335.png);
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .header {
+    background-image: url(../media/images/tablet-header/Ellipse3-670.png);
   }
 }
 @media screen and (min-width: 1200px) {
   .header {
     max-width: 1200px;
+    background-size: 534px 534px;
+    background-image: url(../media/images/desktop-header/Ellipse3-534.png);
+  }
+}
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .header {
+    background-image: url(../media/images/desktop-header/Ellipse3-1068.png);
   }
 }
 
@@ -207,7 +230,7 @@ body {
   -webkit-transition: background-color 500ms ease-out;
   transition: background-color 500ms ease-out;
 }
-.btn:hover {
+.btn:hover, .btn:focus {
   background-color: #ecebeb;
 }
 @media screen and (max-width: 767px) {
@@ -300,7 +323,7 @@ body {
   -webkit-transition: background-color 500ms ease-out;
   transition: background-color 500ms ease-out;
 }
-.hero__link:hover {
+.hero__link:hover, .hero__link:focus {
   background-color: #ecebeb;
   color: var(--accent-color);
 }
@@ -376,12 +399,13 @@ body {
   border-radius: 50%;
   border-color: transparent;
   color: var(--accent-color);
+  fill: var(--accent-color);
   background-color: var(--main-text-color);
   cursor: pointer;
   -webkit-transition: background-color 500ms ease-out;
   transition: background-color 500ms ease-out;
 }
-.hero__btn:hover {
+.hero__btn:hover, .hero__btn:focus {
   background-color: #ecebeb;
 }
 @media screen and (min-width: 1200px) {
@@ -392,27 +416,56 @@ body {
 }
 
 .hero__arrow {
-  font-size: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 1199px) {
+  .hero__arrow-icon--big {
+    display: none;
+  }
+  .hero__arrow-icon--small {
+    display: block;
+  }
 }
 @media screen and (min-width: 1200px) {
-  .hero__arrow {
-    font-size: 10px;
+  .hero__arrow-icon--big {
+    display: block;
   }
+  .hero__arrow-icon--small {
+    display: none;
+  }
+}
+.hero__arrow-icon {
+  color: currentColor;
 }
 
 .hero__institution {
+  position: relative;
+  right: 16px;
+  z-index: 10;
   text-align: right;
 }
 
 .hero__icon {
   position: absolute;
-  -webkit-transform: translate(25%, 37.5%);
-          transform: translate(25%, 37.5%);
+  top: -2px;
+  right: -10px;
+  z-index: -1;
   width: 16px;
   height: 16px;
 }
 @media screen and (min-width: 1200px) {
   .hero__icon {
+    top: -4px;
+    right: -18px;
     width: 30px;
     height: 30px;
   }

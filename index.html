@@ -111,24 +111,28 @@
                 eiusmod tempor incididunt ut labore et
               </p>
               <button class="hero__btn" type="button">
-                <span class="hero__arrow">&#10140;</span>
+                <span class="hero__arrow">
+                  <svg
+                    class="hero__arrow-icon hero__arrow-icon--big"
+                    width="10"
+                    height="9"
+                  >
+                    <use
+                      href="./media/images/symbol-defs.svg#arrow-right2"
+                    ></use>
+                  </svg>
+                  <svg
+                    class="hero__arrow-icon hero__arrow-icon--small"
+                    width="8"
+                    height="7"
+                  >
+                    <use
+                      href="./media/images/symbol-defs.svg#arrow-right2"
+                    ></use>
+                  </svg>
+                </span>
               </button>
             </div>
-          </div>
-          <div class="hero__circle">
-            <img
-              srcset="
-                ./media/images/mobile-header/Ellipse3-284.png    284w,
-                ./media/images/tablet-header/Ellipse3-335.png    335w,
-                ./media/images/desktop-header/Ellipse3-534.png   534w,
-                ./media/images/mobile-header/Ellipse3-568.png    568w,
-                ./media/images/tablet-header/Ellipse3-670.png    670w,
-                ./media/images/desktop-header/Ellipse3-1068.png 1068w
-              "
-              sizes="(min-width: 1200px) 534px, (min-width: 768px) 335px, (max-width: 767px) 100%"
-              src="./media/images/desktop-header/Ellipse3-534.png"
-              alt="red circle"
-            />
           </div>
           <div class="hero__icecream">
             <img
@@ -140,7 +144,7 @@
                 ./media/images/mobile-header/slider-pic7-342.png  342w,
                 ./media/images/desktop-header/slider-pic7-472.png 472w
               "
-              sizes="(min-width: 1200px) 236px, (min-width: 768px) 143px, (max-width: 767px) 100%"
+              sizes="(min-width: 1200px) 236px, (min-width: 768px) 143px, (max-width: 767px) 100vw"
               src="./media/images/desktop-header/slider-pic7-236.png"
               alt="IceCream"
             />
