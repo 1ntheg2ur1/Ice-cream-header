@@ -436,6 +436,8 @@ body {
 
 .hero__wrapper {
   width: 218px;
+  position: relative;
+  z-index: 2;
 
   @media screen and (min-width: 768px) {
     width: 162px;
@@ -552,7 +554,8 @@ body {
 }
 
 .hero__girl,
-.hero__institution {
+.hero__institution,
+.hero__img {
   display: none;
 
   @media screen and (min-width: 768px) {
@@ -570,6 +573,13 @@ body {
 
 .hero__img {
   position: absolute;
+  bottom: 16px;
+  left: 32px;
+
+  @media screen and (min-width: 1200px) {
+    bottom: 60px;
+    left: 16px;
+  }
 }
 
 .hero__thumb {
@@ -718,17 +728,25 @@ body {
 
 .hero__icecream {
   position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 32px;
 
   @media screen and (min-width: 768px) {
+    right: 303px;
   }
 
   @media screen and (min-width: 1200px) {
+    right: 328px;
   }
 }
 
 .hero__girl {
   position: absolute;
+  right: 32px;
+  bottom: 0;
 
   @media screen and (min-width: 1200px) {
+    right: 16px;
   }
 }
