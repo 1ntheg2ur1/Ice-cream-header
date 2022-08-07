@@ -30,7 +30,7 @@ a {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -74,6 +74,7 @@ body {
   background-color: #ffb8ca;
   margin: 0 auto;
   max-width: 320px;
+  background-position: top 83px left 36px;
   background-size: 346px 344px;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -91,6 +92,7 @@ body {
 @media screen and (min-width: 768px) {
   .header {
     max-width: 768px;
+    background-position: top 43px right 185px;
     background-size: 335px 333px;
     background-image: url(../media/images/tablet-header/Ellipse3-335.png);
   }
@@ -102,6 +104,7 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .header {
+    background-position: top 54px right 149px;
     max-width: 1200px;
     background-size: 534px 534px;
     background-image: url(../media/images/desktop-header/Ellipse3-534.png);
@@ -115,23 +118,7 @@ body {
 
 @media screen and (max-width: 1199px) {
   .nav {
-    overflow: hidden;
-  }
-  .nav__list {
-    position: absolute;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-    background-color: #e17992;
-    width: 100vw;
-    height: 100vh;
-    -webkit-transition: -webkit-transform 500ms ease-out;
-    transition: -webkit-transform 500ms ease-out;
-    transition: transform 500ms ease-out;
-    transition: transform 500ms ease-out, -webkit-transform 500ms ease-out;
-  }
-  .nav.is-open .nav__list {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    display: none;
   }
 }
 .nav__link {
@@ -180,10 +167,10 @@ body {
   width: 100%;
   height: 1px;
   background-color: var(--accent-color);
-  -webkit-transition: -webkit-transform 500ms ease-out;
-  transition: -webkit-transform 500ms ease-out;
-  transition: transform 500ms ease-out;
-  transition: transform 500ms ease-out, -webkit-transform 500ms ease-out;
+  -webkit-transition: background-color 500ms ease-out, -webkit-transform 500ms ease-out;
+  transition: background-color 500ms ease-out, -webkit-transform 500ms ease-out;
+  transition: transform 500ms ease-out, background-color 500ms ease-out;
+  transition: transform 500ms ease-out, background-color 500ms ease-out, -webkit-transform 500ms ease-out;
 }
 .mobile-menu::before {
   top: 0;
@@ -195,17 +182,42 @@ body {
   top: 5.5px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+  background-color: var(--main-text-color);
 }
 .mobile-menu.is-open::after {
   bottom: 5.5px;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+  background-color: var(--main-text-color);
 }
 .mobile-menu.is-open .mobile-menu__particle {
   -webkit-transform: scale(0);
           transform: scale(0);
 }
 
+@media screen and (min-width: 1200px) {
+  .menu-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 60px 20px 0 20px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #E17992;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  .menu-container.is-open {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -235,7 +247,7 @@ body {
 }
 @media screen and (max-width: 767px) {
   .btn {
-    width: 100%;
+    display: none;
   }
 }
 @media screen and (min-width: 768px) {
@@ -246,6 +258,44 @@ body {
 @media screen and (min-width: 1200px) {
   .btn {
     width: 159px;
+  }
+}
+
+.btn-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 44px;
+  background: #ffffff;
+  border-radius: 22px;
+  border-color: transparent;
+  font-family: var(--main-font), sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.3125;
+  color: #d41443;
+  cursor: pointer;
+  -webkit-transition: background-color 500ms ease-out;
+  transition: background-color 500ms ease-out;
+}
+.btn-menu:hover, .btn-menu:focus {
+  background-color: #ecebeb;
+}
+@media screen and (max-width: 767px) {
+  .btn-menu {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .btn-menu {
+    width: 160px;
   }
 }
 
