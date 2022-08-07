@@ -40,6 +40,11 @@ body {
   line-height: 1.3125;
   color: var(--main-text-color);
 }
+@media screen and (max-width: 767px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+}
 
 .container {
   width: 100%;
@@ -116,9 +121,27 @@ body {
   }
 }
 
+.header__container {
+  position: relative;
+}
+
+.logo {
+  display: block;
+}
+@media screen and (max-width: 767px) {
+  .logo {
+    padding-top: 8px;
+  }
+}
+
 @media screen and (max-width: 1199px) {
   .nav {
     display: none;
+  }
+  .nav__item {
+    padding: 12px 0;
+    border-top: 1px solid #e18298;
+    border-bottom: 1px solid #e18298;
   }
 }
 .nav__link {
@@ -137,11 +160,22 @@ body {
 
 .mobile-menu {
   display: block;
-  position: relative;
-  left: 0;
+  position: absolute;
   width: 20px;
   height: 12px;
   cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .mobile-menu {
+    right: 20px;
+    top: 27px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    right: 20px;
+    top: 27px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .mobile-menu {
@@ -203,15 +237,26 @@ body {
 
 @media screen and (max-width: 1199px) {
   .menu-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
     padding: 60px 20px 0 20px;
     width: 100vw;
     height: 100vh;
-    background-color: #E17992;
+    background-color: #e17992;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
+    -webkit-transition: -webkit-transform 500ms ease-out;
+    transition: -webkit-transform 500ms ease-out;
+    transition: transform 500ms ease-out;
+    transition: transform 500ms ease-out, -webkit-transform 500ms ease-out;
   }
   .menu-container.is-open {
     -webkit-transform: translateX(0);
@@ -271,6 +316,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   height: 44px;
   background: #ffffff;
   border-radius: 22px;
@@ -291,11 +338,14 @@ body {
 @media screen and (max-width: 767px) {
   .btn-menu {
     width: 100%;
+    max-width: 210px;
+    margin-bottom: 19px;
   }
 }
 @media screen and (min-width: 768px) {
   .btn-menu {
-    width: 160px;
+    width: 186px;
+    margin-bottom: 20px;
   }
 }
 

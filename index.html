@@ -46,14 +46,13 @@
     />
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
-  <body>
+  <body data-open>
     <header class="header section">
       <div class="container header__container">
-        <div class="logo">
-          <svg class="logo__icon" width="199" height="50">
-            <use href="./media/images/symbol-defs.svg#Group"></use>
-          </svg>
-        </div>
+        <a class="logo" href="./index.html"
+          ><svg class="logo__icon" width="199" height="50">
+            <use href="./media/images/symbol-defs.svg#Group"></use></svg
+        ></a>
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">
@@ -81,7 +80,7 @@
             <use href="./media/images/symbol-defs.svg#Vector-1"></use>
           </svg>
         </button>
-        <div class="menu-container" data-menu>
+        <div class="menu-container" id="menu-container" data-menu>
           <button class="btn-menu" type="button">
             Buy now
             <svg class="btn__icon" width="6" height="10">
@@ -110,8 +109,16 @@
             </ul>
           </nav>
         </div>
-        <div class="mobile-menu" data-menu-button>
-          <span class="mobile-menu__particle"></span>
+        <div
+          class="mobile-menu"
+          aria-expanded="false"
+          aria-controls="menu-container"
+          data-menu-button
+        >
+          <span
+            class="mobile-menu__particle"
+            aria-label="Переключатель мобильного меню"
+          ></span>
         </div>
         <div class="hero">
           <h1 class="hero__header">
